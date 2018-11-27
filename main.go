@@ -102,6 +102,17 @@ func (list *LinkedList) Size() int {
 	}
 	return size
 }
+func (list *LinkedList) PrintList() {
+	head := list.head
+	for{
+		if head == nil {
+			break
+		}
+		fmt.Println(head.value)
+		head = head.next
+	}
+}
+
 func main() {
 	linkedList := LinkedList{}
 	linkedList.Append(2)
@@ -116,5 +127,9 @@ func main() {
 	fmt.Printf("item at index 1 %d\n",linkedList.IndexOf(1))
 	fmt.Printf("size is %d \n",linkedList.Size())
 	linkedList.RemoveAt(1)
+	fmt.Printf("size is %d \n",linkedList.Size())
+	linkedList.Append(44)
+	linkedList.Append(33)
+	linkedList.PrintList()
 	fmt.Printf("size is %d \n",linkedList.Size())
 }

@@ -54,3 +54,19 @@ func TestIndexOf(t *testing.T) {
 		t.Errorf("expected position 1 but got %d", i)
 	}
 }
+
+
+func TestPrintList(t *testing.T) {
+	i := 0
+	head := list.head
+	for {
+		if head == nil {
+			break
+		}
+		if i != head.value {
+			t.Errorf("Expected %d but got %d", i, head.value)
+		}
+		head = head.next
+		i++
+	}
+}
